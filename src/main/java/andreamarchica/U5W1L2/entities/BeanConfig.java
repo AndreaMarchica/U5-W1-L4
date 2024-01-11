@@ -146,16 +146,16 @@ public class BeanConfig {
 
     @Bean({"Tavolo1"})
     andreamarchica.U5W1L2.entities.Table getTable1(@Value("${seat.price}") double seatPrice) {
-        return new andreamarchica.U5W1L2.entities.Table(1, 5, true, seatPrice);
+        return new andreamarchica.U5W1L2.entities.Table(1, 1, 5, true, seatPrice);
     }
 
     @Bean({"Tavolo2"})
     andreamarchica.U5W1L2.entities.Table getTable2(@Value("${seat.price}") double seatPrice) {
-        return new andreamarchica.U5W1L2.entities.Table(2, 4, true, seatPrice);
+        return new andreamarchica.U5W1L2.entities.Table(2, 2, 4, true, seatPrice);
     }
 
     @Bean({"Tavolo3"})
     andreamarchica.U5W1L2.entities.Table getTable3(@Value("${seat.price}") double seatPrice) {
-        return new andreamarchica.U5W1L2.entities.Table(3, 8, true, seatPrice);
+        return new andreamarchica.U5W1L2.entities.Table(3, 3, 8, true, seatPrice);
     }
 }

@@ -1,14 +1,26 @@
 package andreamarchica.U5W1L2.entities;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/*@Entity*/
+@Getter
+@NoArgsConstructor
 public class Order {
+	@Id
+	@GeneratedValue
+	private long id;
 	private int numeroOrdine;
-	private com.epicode.U5D2.entities.State state;
+	private andreamarchica.U5W1L2.entities.State state;
 	private int numCoperti;
 	private LocalTime oraAcquisizione;
 	private List<Item> orderedProducts;
@@ -19,7 +31,7 @@ public class Order {
 		if (table.getNumMaxCoperti() <= numCoperti)
 			throw new RuntimeException("Numero coperti maggiore di numero massimo posti sul tavolo!");
 		this.numeroOrdine = rndm.nextInt(1000, 100000);
-		this.state = com.epicode.U5D2.entities.State.IN_CORSO;
+		this.state = andreamarchica.U5W1L2.entities.State.IN_CORSO;
 		this.numCoperti = numCoperti;
 		this.oraAcquisizione = LocalTime.now();
 		this.orderedProducts = new ArrayList<>();

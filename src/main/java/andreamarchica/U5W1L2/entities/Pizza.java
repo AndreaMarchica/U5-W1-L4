@@ -1,11 +1,22 @@
 package andreamarchica.U5W1L2.entities;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
-import java.util.List;
+import lombok.NoArgsConstructor;
 
+import java.util.List;
+/*@Entity*/
+@Table(name = "pizze")
 @Getter
+@NoArgsConstructor
 public class Pizza extends Item {
+    @Id
+    @GeneratedValue
+    private long id;
     private String name;
 
     private List<Topping> toppingList;
